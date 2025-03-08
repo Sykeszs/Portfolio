@@ -1,0 +1,32 @@
+/* Set the perspective to give a 3D effect */
+.perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  /* Flip Card */
+  .flip-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+  }
+  
+  /* Card Faces */
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Back of the card is initially rotated by 180 degrees */
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* When the user hovers over the card, it flips */
+  .group:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  

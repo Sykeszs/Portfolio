@@ -1,0 +1,40 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Slick Carousel customizations */
+.slick-prev,
+.slick-next {
+  color: #3b8070; /* Tailwind green */
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #2d6a4f; /* Darker green for hover effect */
+}
+
+.slick-dots li button:before {
+  color: #3b8070; /* Tailwind green */
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #2d6a4f; /* Darker green for active dot */
+}
+
+/* Global Styles (e.g., in index.css or tailwind.css) */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #1a202c; /* Dark background color */
+  color: white; /* Dark mode text color */
+}
+
+html {
+  scroll-behavior: smooth;
+}

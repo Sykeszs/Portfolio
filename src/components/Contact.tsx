@@ -3,6 +3,7 @@ import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
 // Define Google Maps types if not already available
 declare global {
@@ -109,9 +110,19 @@ const Contact: React.FC = () => {
 
   const { darkMode } = useTheme();
 
-const mark = "/marker-icon.png";
-const mark2x = "/marker-icon-2x.png";
-const markshadow = "/marker-shadow.png";
+const mark = "/TaskManagement.png";
+const mark2x = "/TaskManagement.png";
+const markshadow = "/TaskManagement.png";
+
+const customMarker = new L.Icon({
+  iconUrl: "/marker-icon-2x.png",
+  iconRetinaUrl: "/marker-icon.png",
+  shadowUrl: "/marker-shadow.png",
+  iconSize: [25, 41], 
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41], 
+});
 
   useEffect(() => {
     import("leaflet").then((L) => {
@@ -133,7 +144,7 @@ const markshadow = "/marker-shadow.png";
           <div className="w-full h-96 lg:h-full">
           <MapContainer center={[14.490099, 120.901554]} zoom={13} className="w-full h-full">
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <Marker position={[14.490099, 120.901554]}>
+          <Marker position={[14.490099, 120.901554]} icon={customMarker}>
           </Marker>
         </MapContainer>
           </div>

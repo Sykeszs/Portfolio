@@ -3,7 +3,9 @@ import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import mark from '../assets/marker-icon.png'
+import mark from '../assets/marker-icon.png';
+import mark2x from '../assets/marker-icon-2x.png';
+import markshadow from '../assets/marker-shadow.png';
 
 // Define Google Maps types if not already available
 declare global {
@@ -112,9 +114,9 @@ const Contact: React.FC = () => {
     import("leaflet").then((L) => {
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
-        iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+        iconRetinaUrl: mark2x,
         iconUrl: mark,
-        shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+        shadowUrl: markshadow,
       });
     });
   }, []);

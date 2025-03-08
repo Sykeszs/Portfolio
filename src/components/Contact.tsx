@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { GrDirections } from "react-icons/gr";
-import ReactDOM from "react-dom";
 import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
@@ -47,7 +45,7 @@ const Contact: React.FC = () => {
         .send(
           'service_4lclscy', // Your EmailJS service ID
           'template_tjhtb9d', // Your EmailJS template ID
-          formData,
+          { ...formData },
           '3yRx4zz8x1BLXe4-J' // Your EmailJS user ID
         )
         .then(

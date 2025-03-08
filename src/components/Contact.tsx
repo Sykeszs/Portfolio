@@ -3,9 +3,6 @@ import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import mark from "/public/marker-icon.png";
-import mark2x from "/public/marker-icon-2x.png";
-import markshadow from "/public/marker-shadow.png";
 
 // Define Google Maps types if not already available
 declare global {
@@ -14,6 +11,8 @@ declare global {
     google: any;
   }
 }
+
+
 
 const Contact: React.FC = () => {
   interface FormData {
@@ -109,6 +108,10 @@ const Contact: React.FC = () => {
   };
 
   const { darkMode } = useTheme();
+
+const mark = "/marker-icon.png";
+const mark2x = "/marker-icon-2x.png";
+const markshadow = "/marker-shadow.png";
 
   useEffect(() => {
     import("leaflet").then((L) => {

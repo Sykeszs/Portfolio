@@ -3,9 +3,9 @@ import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import mark from '../assets/marker-icon.png';
-import mark2x from '../assets/marker-icon-2x.png';
-import markshadow from '../assets/marker-shadow.png';
+import mark from '/marker-icon.png';
+import mark2x from '/marker-icon-2x.png';
+import markshadow from '/marker-shadow.png';
 
 // Define Google Maps types if not already available
 declare global {

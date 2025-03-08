@@ -3,6 +3,7 @@ import { useTheme } from '../ThemeContext';
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import mark from '../assets/marker-icon.png'
 
 // Define Google Maps types if not already available
 declare global {
@@ -109,11 +110,10 @@ const Contact: React.FC = () => {
 
   useEffect(() => {
     import("leaflet").then((L) => {
-      // Fix marker icon issue in Leaflet
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-        iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+        iconUrl: mark,
         shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       });
     });
